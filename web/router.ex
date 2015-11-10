@@ -16,7 +16,7 @@ defmodule ReactTutorial.Router do
   scope "/", ReactTutorial do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/public/index.html", PageController, :index
   end
 
   # Other scopes may use custom stacks.
