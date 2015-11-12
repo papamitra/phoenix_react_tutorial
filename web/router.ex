@@ -16,7 +16,13 @@ defmodule ReactTutorial.Router do
   scope "/", ReactTutorial do
     pipe_through :browser # Use the default browser stack
 
-    get "/public/index.html", PageController, :index
+    get "/", PageController, :index
+  end
+
+  scope "/api", ReactTutorial do
+    pipe_through :api
+
+    resources "/comments", CommentController, only: [:index, :create]
   end
 
   # Other scopes may use custom stacks.
